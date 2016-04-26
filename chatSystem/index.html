@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>及时聊天系统</title>
+		<meta name="renderer" content="webkit" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    	<link rel="stylesheet" href="css/chat.css" />
+    	<link href="css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<!--侧边栏-->
+				<div class="side-bar">
+							<div class="chat-user">
+								<a href="#" class="own-btn"><img src="img/1.png" alt="" /></a>
+							</div>
+							
+							<!--online在线     offline离线    connection连线中-->
+							<div class="statu">
+								<div class="online">
+									<div></div>
+								</div>
+								<div class="offline">
+									<div></div>
+								</div>
+								<div class="connection">
+									<div></div>
+								</div>
+							</div>
+							
+							<div class="tabs">
+								<div class="item dialog active">
+									<span class="buble">212</span>
+								</div>
+								
+								<div class="item friend">
+								</div>
+								
+								<div class="item group">
+								</div>
+								<div class="dropdown">
+									<div class="item add-btn" data-toggle="dropdown"></div>
+									<ul class="dropdown-menu">
+										<li><a href="#" data-toggle="modal" data-target="#myModal-chat">新会话</a></li>
+										<li><a href="" data-toggle="modal" data-target="#myModal-group">加入/创建群组</a></li>
+									</ul>
+								</div>
+								
+							</div>
+							
+							<div class="feedback">
+								<div class="item help">
+								</div>
+								
+								<div class="item home">
+								</div>
+							</div>
+				</div>
+				<!--侧边栏-->
+				
+				<!--demo-->
+				<div class="demo-div">
+					
+					  <div class="text-center title">
+					  	<div class="dropdown">
+									<a href="#" class="demo-btn" data-toggle="dropdown"> DEMO<span class="glyphicon glyphicon-chevron-down"></span></a>
+									 <ul class="dropdown-menu list-unstyled demo-down">
+								  	 	<li class="dropdown-header">个人信息</li>
+								  	 	<li><a href="#" class="own-btn"><span class="glyphicon glyphicon-edit"></span>个人信息</a></li>
+								  	 	<!--<li><a href="#" class="own-set"><span class="glyphicon glyphicon-wrench"></span>用户设置</a></li>
+								  	 	<li><a href=""><span class="glyphicon glyphicon-bell"></span>打开消息提醒</a></li>
+								  	 	<li class="line"></li>
+								  	 	<li class="dropdown-header">团队信息</li>
+								  	 	<li><a href=""><span class="glyphicon glyphicon-cog"></span>应用集成</a></li>
+								  	 	<li><a href=""><span></span>下载</a></li>
+								  	 	<li><a href=""><span></span>问题反馈</a></li>
+								  	 	<li class="line"></li>-->
+								  	 	<li><a href=""><span class="glyphicon glyphicon-log-out"></span>退出登录</a></li>
+								  	 </ul>
+						</div>
+					  </div>
+					  
+					  <div class="search">
+					  	<input type="text" class="input" placeholder="搜索联系人、群组和会话"/>
+					  	<img src="img/icon-invite.png" alt="" />
+					  </div>
+					  
+					  <!--会话列表开始-->
+					  <div class="people-list people-list-dialog">
+					  	   <div class="people-item title" data-type=1>     <!--data-type用于标识 是群组对话 还是个人对话  个人对话为1  群组对话为2 -->
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/1.png" alt="" />
+					  	   	      	<div class="read-point">7</div>
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="time">
+					  	   	      		13:53
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		<span class="glyphicon glyphicon-bell"></span>
+					  	   	      		   demo16将群主转让给demo1
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=1>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      	<div class="read-point">7</div>
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="time">
+					  	   	      		13:53
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=2>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="time">
+					  	   	      		13:53
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  </div><!--会话列表结束-->
+					  
+					  
+					  <!--团队成员开始-->
+					  <div class="people-list people-list-member">
+					  	<p class="member-title">团队成员</p>
+					  	   <div class="people-item" data-type=1>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/1.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   demo16将群主转让给demo1
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=1>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=1>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  </div> <!--团队成员结束-->
+					  
+					  <!--群开始-->
+					  <div class="people-list people-list-group">
+					  	   <div class="people-item title" data-type=2>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/1.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   demo16将群主转让给demo1
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=2>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  	   <div class="people-item" data-type=2>
+					  	   	      <div class="people-img">
+					  	   	      	<img src="img/2.png" alt="" />
+					  	   	      </div>
+					  	   	      <div class="people-info">
+					  	   	      	<div class="title" title="sdsssssssssssssssss">
+					  	   	      		sdsssssssssssssssss
+					  	   	      	</div>
+					  	   	      	<div class="text">
+					  	   	      		   你好？？
+					  	   	      	</div>
+					  	   	      </div>
+					  	   </div>
+					  	   
+					  </div> <!--群结束-->
+					  
+				</div>
+				<!--demo-->
+				
+				<!--chat-content-->
+				<div class="chat-content">
+						<div class="top">
+							<div class="pull-left"><span class="glyphicon glyphicon-comment"></span>everyone</div>
+							<div class="pull-right top-group"><a href="#" ></a></div>   <!--用户显示个人对话-->
+							<div class="pull-right top-user"><a href="#"></a></div>		<!--用户显示群组对话-->
+						</div>
+						
+						
+						<div class="contents">
+							
+							<div class="contents-div">
+								<div class="user-img">
+									<img src="img/1.png" alt="" />
+								</div>
+								<div class="user-content">
+									<div>demo2 <label class="time">昨天22:01</label></div>
+									<div class="user-text">dsssssssssssssssssss是对付对付敌人感到恐惧入股的日光看看他有人痛苦</div>
+								</div>
+							</div>
+							
+							<div class="contents-div">
+								<div class="user-img">
+									<img src="img/2.png" alt="" />
+								</div>
+								<div class="user-content">
+									<div>demo2 <label class="time">昨天22:01</label></div>
+									<div class="user-text">dsssssssssssssssssss是对付对付敌人感到恐惧入股的日光看看他有人痛苦</div>
+								</div>
+							</div>
+							
+							<div class="contents-div">
+								<p class="text-center user-text">谁加入了什么群或者谁邀请谁加入了什么群</p>
+							</div>
+							
+							<div class="contents-div">
+								<div class="user-img">
+									<img src="img/2.png" alt="" />
+								</div>
+								<div class="user-content">
+									<div>demo2 <label class="time">昨天22:01</label></div>
+									<div class="user-text">dsssssssssssssssssss是对付对付敌人感到恐惧入股的日光看看他有人痛苦</div>
+									<div class="user-text-img">
+										<div>
+											<img src="img/1.png" alt="" />
+										</div>
+										<p><span>附件名称</span> <span>大小</span> <a href="#"><span class="glyphicon glyphicon-save"></span>下载</a></p>
+									</div>
+									<div class="user-text-img">
+										<div>
+											<img src="img/1.png" alt="" />
+										</div>
+										<p><span>附件名称</span> <span>大小</span> <a href="#"><span class="glyphicon glyphicon-save"></span>下载</a></p>
+									</div>
+									<div class="user-text-file">
+										<div>
+											<img src="img/1.png" alt="" />
+										</div>
+										<div>
+											<p><span>附件名称</span> <span>大小</span> </p>
+											<p><a href="#"><span class="glyphicon glyphicon-save"></span>下载</a></p>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--发文字 文件-->
+						<div class="content-edit">
+							  <div class="reply">
+							  		<div name="" rows="8" id="saytext" class="textarea" contentEditable="true"></div>
+							  </div>
+							  <div class="control">           
+							  	<div class="item emoji" >               
+							  		<img src="img/emoji.png" alt="表情" >           
+							  	</div>           
+							  	<div class="item file">               
+							  		<a href="#" data-toggle="modal" data-target="#myModal-img"><img src="img/file.png" alt="文件"> </a>        
+							  		<!--<input multiple="" type="file" name="qqfile" id="input-4" >-->
+							  	</div>
+							  	<div class="item send">               
+							  		<img src="img/send.png" alt="发送">               
+							  		<span>发送</span>           
+							  	</div>
+							  </div>
+							  
+						</div>
+						<!--发文字 文件-->
+						
+				</div>
+				<!--chat-content-->
+				
+				<div class="descript-div">
+					  <div class="file-search">
+					  	<input type="text" placeholder="搜索所有的消息和文件" />
+					  	<a href="#" class="pull-right file-btn"> <span class="glyphicon glyphicon-folder-open"></span> </a>
+					  </div>
+					  
+					  <!--用户自己的资料-->
+					    <div class="descript descript-own">
+					    	 <div class="des-header">
+					    	 	  <span>用户简介</span>
+					    	 	  <span class="pull-right"><a href="" class="glyphicon glyphicon-remove-circle remove-btn"></a></span>
+					    	 </div>
+					    	 <div class="des-describe">
+					    	 	<div class="des-describe-img">
+					    	 		<img id="preview" src="img/1.png" alt="" />
+					    	 		<span class="glyphicon glyphicon-wrench"></span>
+					    	 		<input type="file" class="img" id="classFile"  onchange="setImagePreview('classFile','preview')"  accept=".jpg,.jpeg,.png" > 
+					    	 	</div>
+					    	 	<div class="des-describe-text">
+					    	 		<div><input type="text" class="input" value="demo26"/></div>
+					    	 		<div><input type="text" class="input" value="算得上是"/></div>
+					    	 	</div>
+					    	 </div>
+					    	 <div class="des-email">
+					    	 	<div class="title">账户email</div>
+					    	 	<div class="text">demo26@demo.grouk.com</div>
+					    	 </div>
+					    	 <div class="des-file">
+					    	 	 <a href="#" class="file-btn"> <span class="glyphicon glyphicon-file"></span>文件 </a> 
+					    	 	 <a href="#"> <span class="glyphicon glyphicon-send"></span>保存 </a>
+					    	 	 <a href="#" class="psd-btn" data-toggle="modal" data-target="#myModal-psd"> <span class="glyphicon glyphicon-lock"></span>更改密码 </a>
+					    	 </div>
+					    </div>
+					  <!--用户自己的资料-->
+					  
+					  
+					  
+					  <!--用户介绍-->
+					    <div class="descript descript-user">
+					    	 <div class="des-header">
+					    	 	  <span>用户简介</span>
+					    	 	  <span class="pull-right"><a href="" class="glyphicon glyphicon-remove-circle remove-btn"></a></span>
+					    	 </div>
+					    	 <div class="des-describe">
+					    	 	<div class="des-describe-img">
+					    	 		<img src="img/1.png" alt="" />
+					    	 	</div>
+					    	 	<div class="des-describe-text">
+					    	 		<div>demo26</div>
+					    	 		<div>算得上是</div>
+					    	 	</div>
+					    	 </div>
+					    	 <div class="des-email">
+					    	 	<div class="title">账户email</div>
+					    	 	<div class="text">demo26@demo.grouk.com</div>
+					    	 </div>
+					    	 <div class="des-file">
+					    	 	 <a href="#" class="file-btn"> <span class="glyphicon glyphicon-file"></span>文件 </a> 
+					    	 	 <a href="#" class="chat-btn"> <span class="glyphicon glyphicon-comment"></span>聊天 </a>
+					    	 </div>
+					    </div>
+					  <!--用户介绍-->
+					  
+					  <!--群组介绍-->
+					    <div class="descript descript-group">
+					    	 <div class="des-header">
+					    	 	  <span>群组简介</span>
+					    	 	  <span class="pull-right"><a href="" class="glyphicon glyphicon-remove-circle remove-btn"></a></span>
+					    	 </div>
+					    	 <div class="des-describe">
+					    	 	<div class="des-describe-img">
+					    	 		<img src="img/1.png" alt="" />
+					    	 	</div>
+					    	 	<div class="des-describe-text">
+					    	 		<div>demo26</div>
+					    	 		<div>算得上是</div>
+					    	 	</div>
+					    	 </div>
+					    	 <div class="des-file">
+					    	 	 <a href="#" class="file-btn"> <span class="glyphicon glyphicon-file"></span>文件 </a> 
+					    	 	 <a href="#" class="chat-btn"> <span class="glyphicon glyphicon-comment"></span>聊天 </a>
+					    	 </div>
+					    	 <div class="des-email">
+					    	 	<div class="title">群邮件</div>
+					    	 	<div class="text">demo26@demo.grouk.com</div>
+					    	 </div>
+					    	 <div class="des-email">
+					    	 	<div class="title">群简介</div>
+					    	 	<div class="text">科技示范ski发第三方的更多更符合国家规划局和空间看见了看见</div>
+					    	 </div>
+					    	 <div class="des-member">
+					    	 	<div class="header"><span>成员——</span><a href="#" data-toggle="modal" data-target="#myModal-invite">邀请</a></div>
+					    	 	<div class="input">
+					    	 		<input type="text" placeholder="搜索成员..."/>
+					    	 		<a href=""> <span class="glyphicon glyphicon-search"></span></a>
+					    	 	</div>
+					    	 	<ul class="list list-unstyled">
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 		<li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li><li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li><li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li><li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li><li>
+					    	 			<img src="img/1.png" alt="" />
+					    	 			<span><img src="img/group-owner.png"></img>tes113(demo11)</span>
+					    	 		</li>
+					    	 	</ul>
+					    	 </div>
+					    	 <div class="des-out">
+					    	 	<a href="">退出群组</a>
+					    	 </div>
+					    </div>
+					  <!--群组介绍-->
+					  
+					  <!--文件--> 
+					  	  <div class="descript descript-file">
+					    	 <div class="des-header">
+					    	 	  <span>文件</span>
+					    	 	  <span class="pull-right"><a href="#" class="glyphicon glyphicon-remove-circle remove-btn"></a></span>
+					    	 </div>
+					    	 <div class="input">
+					    	 		<input type="text" placeholder="搜索文件..."/>
+					    	 		<a href=""> <span class="glyphicon glyphicon-search"></span></a>
+					    	 </div>
+					    	 <ul class="file-list list-unstyled">
+					    	 	<li>
+					    	 		<div class="file-img">
+					    	 			<img src="img/3.png" alt="" />
+					    	 		</div>
+					    	 		<div class="file-info">
+					    	 			<div class="file-title"><span class="pull-left">wx.jpg</span><span class="pull-right">2014-04-18 17:07</span></div>
+					    	 			<div class="file-title">
+					    	 				<span class="pull-left"><img src="img/1.png" alt="" />demo68</span>
+					    	 				<span class="pull-right">32.8kb</span>
+					    	 			</div >
+					    	 			<div class="file-btn">
+					    	 				<a href="" class="glyphicon glyphicon-cloud-download" title="下载"></a>
+					    	 				<a href="" class="glyphicon glyphicon-remove" title="删除"></a>
+					    	 			</div>
+					    	 		</div>
+					    	 	</li>
+					    	 	
+					    	 	<li>
+					    	 		<div class="file-img">
+					    	 			<img src="img/3.png" alt="" />
+					    	 		</div>
+					    	 		<div class="file-info">
+					    	 			<div class="file-title"><span class="pull-left">wx.jpg</span><span class="pull-right">2014-04-18 17:07</span></div>
+					    	 			<div class="file-title">
+					    	 				<span class="pull-left"><img src="img/1.png" alt="" />demo68</span>
+					    	 				<span class="pull-right">32.8kb</span>
+					    	 			</div >
+					    	 			<div class="file-btn">
+					    	 				<a href="" class="glyphicon glyphicon-cloud-download" title="下载"></a>
+					    	 				<a href="" class="glyphicon glyphicon-remove" title="删除"></a>
+					    	 			</div>
+					    	 		</div>
+					    	 	</li>
+					    	 	
+					    	 </ul>
+					    </div>
+					  <!--用户介绍-->
+					  <!--文件-->
+					  
+				</div>
+			</div>
+		</div>
+		
+		<!--新建会话-->
+		<div class="modal fade" id="myModal-chat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">新会话</h4>
+			      </div>
+			      <div class="modal-body">
+			      	    <span class="glyphicon glyphicon-question-sign"></span>
+			            <div class="tips">
+			            	请输入用户名选择团队成员发起会话。
+			            	<br>
+			            	若选择一名成员，则发起与该成员的单聊；
+			            	<br>
+			            	若选择多名成员，则发起新的私密群聊；
+			            	<br>
+			            	若输入的成员不在团队中，勾选我们给出的邮件地址，可以直接邀请该用户加入会话。
+			            	<br>
+			            </div>
+			            
+			            <div class="chat-search">                   
+			            	<ul class="chosen-list">
+			            		
+			            	</ul>                   
+			            	<input type="text" placeholder="输入团队成员的名字或用户名">               
+			            </div>
+			            
+			            <div class="list-search">
+			            	<ul class="list-unstyled">
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            	</ul>
+			            </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			        <button type="button" class="btn btn-info">继续</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		<!--加入群组-->
+		<div class="modal fade" id="myModal-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">加入群组</h4>
+			      </div>
+			      <div class="modal-body">
+			      	    <span class="glyphicon glyphicon-question-sign"></span>
+			            <div class="tips">
+			            	加入团队中的公开群组
+			            </div>
+			            
+			            <div >                   
+			            	<input type="text" placeholder="搜索群名称" class="chat-search">               
+			            </div>
+			            
+			            <!--可加入的公开群列表-->
+			            <div class="list-search-group">
+			            	<p>可加入的公开群列表</p>
+			            	<ul class="list-inline">
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="col-sm-4 info-contoler"><a href="#">加入</a></div>
+			            			</div>
+			            		</li>
+			            		
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="col-sm-4 info-contoler"><a href="#">加入</a></div>
+			            			</div>
+			            		</li>
+			            		
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="col-sm-4 info-contoler"><a href="#">加入</a></div>
+			            			</div>
+			            		</li>
+			            	</ul>
+			            </div><!--可加入的公开群列表-->
+			            
+			            <!--已加入的公开群列表-->
+			            <div class="list-search-group">
+			            	<p>已加入的公开群列表</p>
+			            	<ul class="list-inline">
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="info-gray col-sm-4 info-contoler">已加入</div>
+			            			</div>
+			            		</li>
+			            		
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="info-gray col-sm-4 info-contoler">已加入</div>
+			            			</div>
+			            		</li>
+			            		
+			            		<li>
+			            			<img src="img/1.png" alt="" />
+			            			<div class="info">
+			            				<div class="info-div">everyone</div>
+			            				<div class="info-div info-gray">everyone</div>
+			            				<div class="info-gray col-sm-8 info-num"><i class="glyphicon glyphicon-user"></i>11</div>
+			            				<div class="info-gray col-sm-4 info-contoler">已加入</div>
+			            			</div>
+			            		</li>
+			            	</ul>
+			            </div><!--已加入的公开群列表-->
+			            
+			      </div>
+			      <div class="modal-footer">
+			      	 <button type="button" class="btn btn-success pull-left" data-dismiss="modal" data-toggle="modal" data-target="#myModal-create">创建群组<span class="glyphicon glyphicon-arrow-right"></span></button>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		<!--创建群-->
+		<div class="modal fade" id="myModal-create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">创建群组</h4>
+			      </div>
+			      <div class="modal-body">
+			      	    <span class="glyphicon glyphicon-question-sign"></span>
+			            <div class="tips">
+			            	创建群组
+			            	<br>
+			            		创建公开群，该群组将对所有团队成员可见，可通过团队公开群列表或搜索找到该群组
+			            	<br>
+			            			创建私密群，该群组无法被团队成员找到，只能通过邀请加入该群
+			            	<br>
+			            </div>
+			            
+			            <div class="input-group">                   
+			            	<span class="title" >名称</span>                   
+			            	<input type="text" name="name" class="group-name">               
+			            </div>
+			            
+			            <div class="input-group">                   
+			            	<span class="title">电子邮件</span>                   
+			            	<input type="text" name="email" class="">                   
+			            </div>
+			            
+			            <div class="input-group">                   
+			            	<span class="title" >私密群</span>                   
+			            	<i class="glyphicon glyphicon glyphicon-ok-sign"></i>               
+			            </div>
+			            
+			            <div class="input-group">                  
+			            	<span class="title">群简介</span>                   
+			            	<textarea name="description"></textarea>               
+			            </div>
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-success pull-left" data-dismiss="modal" data-toggle="modal" data-target="#myModal-group">加入群组<span class="glyphicon glyphicon-arrow-right"></span></button>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			        <button type="button" class="btn btn-info">继续</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		<!--成员邀请-->
+		<div class="modal fade" id="myModal-invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">成员邀请</h4>
+			      </div>
+			      <div class="modal-body">
+			      	    <span class="glyphicon glyphicon-question-sign"></span>
+			            <div class="tips">
+			            	请输入用户名选择团队成员并邀请进入群组。
+			            	<br>
+			            	若输入的成员不在团队中，勾选我们给出的邮件地址，可以直接邀请该用户加入会话。
+			            	<br>
+			            </div>
+			            
+			            <div class="chat-search">                   
+			            	<ul class="chosen-list">
+			            		
+			            	</ul>                   
+			            	<input type="text" placeholder="输入团队成员的名字或用户名">               
+			            </div>
+			            
+			            <div class="list-search">
+			            	<ul class="list-unstyled">
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            		<li data-role="no">
+			            			<img src="img/1.png" alt="" />
+			            			<span class="chat-name">demo</span>
+			            			<span class="glyphicon glyphicon-ok-sign"></span>
+			            		</li>
+			            	</ul>
+			            </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			        <button type="button" class="btn btn-info">继续</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		<!--设置密码-->
+		<div class="modal fade" id="myModal-psd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">设置密码</h4>
+			      </div>
+			      <div class="modal-body">
+			      	    <span class="glyphicon glyphicon-question-sign"></span>
+			            <div class="tips">
+			            	至少输入6个字符
+			            </div>
+			            
+			            <div class="input-group">                    
+			            	<input type="password" class="form-control psd" placeholder="设置密码" >                    
+			            		<span class="input-group-btn">                        
+			            			    <button class="btn btn-default eye-btn" type="button">
+			            				<span class="glyphicon glyphicon-eye-close"></span></button>                    
+			            		</span>                
+			            </div>
+			            
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			        <button type="button" class="btn btn-info">保存</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		<!--提示框-->
+		<div class="alert-mask diy-mask">   
+			<div class="block">       
+				<div class="block-content">
+					
+				</div>       
+				<div class="block-control">           
+					<div class="confirm">
+						OK
+					</div>       
+				</div>   
+			</div>
+		</div>
+		
+		<form>
+  <div class="modal fade" id="myModal-img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
+        </div>
+        <div class="modal-body">
+          <input type="file" name="txt_file" id="txt_file" multiple class="file-loading" />
+        </div></div>
+    </div>
+  </div>
+</form>
+		
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fileinput.js" type="text/javascript"></script>
+        <script src="js/fileinput_locale_zh.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.qqFace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/chat.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
